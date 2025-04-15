@@ -1,7 +1,7 @@
 steps:
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t', 'gcr.io/$PROJECT_ID/amazingapp:$COMMIT_SHA', '.']
-    dir: 'amazingapp_1/amazingapp/blue'  # 👈 correct path to Dockerfile
+    dir: 'amazingapp\ \(1\)/amazingapp/blue'  # Escaped space version
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/$PROJECT_ID/amazingapp:$COMMIT_SHA']
   - name: 'gcr.io/cloud-builders/gcloud'
